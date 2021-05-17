@@ -106,7 +106,7 @@ In the Lambda function we have hard-coded an Array of data but in a real world e
 2. Click on the orange &#39;Create a function&#39; link under the &#39;Getting Started&#39; section
 3. On the &quot;Create function&quot; page, click the &quot;Author from scratch&quot; button
 4. Let&#39;s give our function the name of &quot;myPersonalBanker&quot; and optionally provide a description
-5. Choose Node.js 8.10 as the Runtime
+5. Choose Node.js 14.x as the Runtime
 6. We will &quot;Create new role from template – give it a Lex-style role name (such as &quot;LexRole&quot;) and select &quot;Test Harness permissions&quot; as the policy template.
 
 
