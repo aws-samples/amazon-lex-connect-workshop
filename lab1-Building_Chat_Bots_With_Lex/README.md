@@ -113,9 +113,11 @@ In the Lambda function we have hard-coded an Array of data but in a real world e
 ![Author new Lambda function](images/Picture11.png)
 
 1. Hit &quot;Create function&quot; on the bottom right and you&#39;ll be take to the &quot;Configuration&quot; window.  We are not adding any additional triggers, nor are we using Lambda Layers, so scroll down to the &quot;Function code&quot; section
-2. Open the lambda function code you will find [here](./myPersonalBanker_v1.js) (myPersonalBanker\_v1.js). Copy and paste the code into the inline editor – make sure that you overwrite any template code that is already in the code box
+2. i) Open the lambda function code you will find [here](./myPersonalBanker_v1.js) (myPersonalBanker\_v1.js). Copy and paste the code into the inline editor – make sure that you overwrite any template code that is already in the code box
+    ii) Use this modified version of the lambda function [code](./myPersonalBanker_v2.js)
 3. Scroll down to the &#39;&quot;Execution role&quot; section and ensure that the role you created previously is selected in the &quot;Existing role&quot; drop-down – if not then please select it
 4.  Leave the rest unchanged, then hit the orange &quot;Save&quot; button at the top of the screen
+5. Linking lex bot v2 to our lambda function is slightly different compared to v1.
 
 # Step 3: Link the bot with the Lambda function
 
