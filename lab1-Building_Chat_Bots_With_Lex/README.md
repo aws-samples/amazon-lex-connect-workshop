@@ -117,23 +117,29 @@ In the Lambda function we have hard-coded an Array of data but in a real world e
     ii) Use this modified version of the lambda function [code](./myPersonalBanker_v2.js)
 3. Scroll down to the &#39;&quot;Execution role&quot; section and ensure that the role you created previously is selected in the &quot;Existing role&quot; drop-down – if not then please select it
 4.  Leave the rest unchanged, then hit the orange &quot;Save&quot; button at the top of the screen
-5. Linking lex bot v2 to our lambda function is slightly different compared to v1.
 
 # Step 3: Link the bot with the Lambda function
+- Linking lex bot v2 to our lambda function is slightly different compared to v1.
 
 In this step we will link the three intents we created to the Lambda function. We do this by providing the Lambda function as the method that contains the business logic used to &#39;fulfill&#39; the users requests. Once this is done (and the bot rebuilt), when a user specifies an intent (such as &#39;what is my checking account balance&#39;), Lex will call our Lambda function and pass it the intent name (&#39;GetAccountDetail&#39;) and the slot value (&#39;checking&#39;).
 
 To do this, we go back to the [Lex Console](https://console.aws.amazon.com/lex).
 
-1. Click on Personal Banker
-2. Enure the &#39;GetBalanceCheck&#39; intent is selected
-3. Make sure that the &#39;Latest&#39; version is selected for both the bot and the intent
+1. Click on `PersonalBanker` bot
+2. On the left-hand menu select the Aliases link. You will have this screen
+![AliasesConsole](./images/banker-lambda-aliases.en.png)
+3. Select the default `TestBotAlias`, then from the Languages panel select `English(US)`
+4. On the dialogbox select the lambda function we created as the `source` and `$LATEST` as seen below.
+![sourceFunction](./images/banker-lambda-select.en.png)
 
-![Set Lex latest version](images/Picture12.png)
+##  Enabling Lambda code hooks on the intents
+1. Navigate to your intent by clicking on the on the left menu
+2. Scroll down to the Fulfillment pane. 
+3. Click on the arrow next to `On successful fulfillment`, then click on `Advanced options button`
 
-4. Scroll down to &quot;Fulfillment&quot;, select &quot;AWS Lambda function&quot;, choose &quot;myPersonalBanker&quot; and click &quot;OK&quot; in the popup warning window which opens. It indicates you are giving Lex the permission to run this Lambda function.
+4. On the long list of the dialogbox go to the one marked `Fulfillment Lambda code hook` and click the checkbox, then click on the `Update options` button at the bottom of the panel.
 
-![Add Lambda permission](images/Picture13.png)
+![Add Lambda permission](./images/banker-lambda-code-hooks.en.png)
 
 5. Click &quot;Save intent&quot;
 6. Repeat the above steps **3, 4 and 5** for intents &quot;GetLoanDetail&quot; and &quot;GetLoanProducts&quot;
